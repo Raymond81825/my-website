@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RAYMOND PAN — 網頁視覺與前端工程師</title>
+<meta name="description" content="潘侑澤 Raymond Pan 的個人作品集：網頁視覺設計、前端開發、WordPress 客製化開發。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<!-- 在畫面繪製前先套用上次的設定，避免閃一下白底或閃一下中文 -->
+<script>
+try{
+  var _t = localStorage.getItem("theme");
+  if(_t) document.documentElement.dataset.theme = _t;
+  var _l = localStorage.getItem("lang");
+  if(_l) document.documentElement.lang = (_l === "en" ? "en" : "zh-Hant");
+}catch(e){}
+</script>
+</head>
+<body>
+
+<div class="cursor" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"></div>
+
+<header class="nav">
+  <a class="nav__mark en" href="#top"><span>Raymond Pan</span></a>
+
+  <div class="nav__right">
+    <nav class="nav__links en" aria-label="主選單">
+      <a href="#top">RESUME</a>
+      <a href="#work">WORK</a>
+      <a href="#clients">CLIENTS</a>
+    </nav>
+
+    <div class="switches">
+      <button class="sw sw--lang en" id="langBtn" type="button" aria-label="Switch language / 切換語言">
+        <span data-lang="zh">EN</span><span data-lang="en">中文</span>
+      </button>
+      <button class="sw sw--theme" id="themeBtn" type="button" aria-label="Switch colour theme / 切換深淺色" aria-pressed="false">
+        <span class="sw__disc" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <a class="nav__cta en" href="#contact"><span data-lang="zh">聯絡我</span><span data-lang="en">CONTACT</span></a>
+  </div>
+</header>
+
+<!-- ======================= HERO 履歷 16:9 ======================= -->
+<main id="top" class="hero">
+  <section class="sheet" aria-label="履歷表 / Resume">
+
+    <!-- 左欄 -->
+    <div class="cell">
+      <div class="portrait">
+        <img src="img/photo.jpg" alt="潘侑澤 Raymond Pan">
+      </div>
+      <div class="name">
+        <h1 class="en line"><span>RAYMOND<br>PAN</span></h1>
+        <div class="han line"><span style="--d:80ms"><span data-lang="zh">潘侑澤 ／ 網頁視覺與前端工程師</span><span data-lang="en">WEB VISUAL &amp; FRONT-END DEVELOPER</span></span></div>
+      </div>
+    </div>
+
+    <!-- 中欄 -->
+    <div class="cell">
+      <div class="blk">
+        <h2 class="en">PROFILE</h2>
+        <p class="zh-lead">
+          <span data-lang="zh">擁有 10 年視覺設計經驗，從視覺設計出發，逐步深入前端開發與 UI/UX 設計。<br><br>隨著對程式的深入探索，我發現自己比起視覺設計，更熱愛前端工程所帶來的邏輯思考與問題解決。享受透過程式拆解需求、建構功能、整合系統，並將想法一步步實現的過程。<br><br>期望結合設計思維與前端技術，打造兼具視覺品質、使用體驗與實用性的網站及系統。</span>
+          <span data-lang="en">With 10 years of background in visual design, I began in visual arts and progressively expanded into front-end development and UI/UX design.<br><br>As I delved deeper into code, I discovered an even greater passion for the logical problem-solving and architectural thinking of front-end engineering. I thrive on deconstructing requirements, engineering features, integrating systems, and bringing ideas to life step by step.<br><br>My aim is to bridge design thinking and technical execution to build websites and digital systems that excel in visual aesthetics, user experience, and practical functionality.</span>
+        </p>
+      </div>
+      <div class="blk">
+        <h2 class="en">CORE SKILLS</h2>
+        <div class="bars">
+          <div class="bar"><i>HTML / CSS</i><span class="track"><b data-w="96"></b></span><span class="pct">96</span></div>
+          <div class="bar"><i>JavaScript</i><span class="track"><b data-w="75"></b></span><span class="pct">75</span></div>
+          <div class="bar"><i><span data-lang="zh">API 串接</span><span data-lang="en">API Integration</span></i><span class="track"><b data-w="72"></b></span><span class="pct">72</span></div>
+          <div class="bar"><i><span data-lang="zh">系統整合</span><span data-lang="en">Integration</span></i><span class="track"><b data-w="80"></b></span><span class="pct">80</span></div>
+        </div>
+      </div>
+      <div class="blk">
+        <h2 class="en">TECHNICAL SKILLS</h2>
+        <div class="tags">
+          <span><span data-lang="zh">前端切版</span><span data-lang="en">Front-end Markup</span></span>
+          <span>RWD</span>
+          <span>SEO</span>
+          <span>GA4 / GTM</span>
+          <span><span data-lang="zh">WordPress 客製化開發</span><span data-lang="en">Custom WordPress Development</span></span>
+          <span>CMS</span>
+          <span>AI Agent</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 右欄 -->
+    <div class="cell">
+      <div class="blk">
+        <h2 class="en">EXPERIENCE</h2>
+        <div class="rows">
+          <div class="row"><time>2025–</time><div>
+            <b><span data-lang="zh">廣告公司、網頁公司｜網頁設計暨前端工程師</span><span data-lang="en">Digital &amp; Web Agency — Web Designer &amp; Front-end Developer</span></b>
+            <em><span data-lang="zh">廣告網頁、形象網站、活動網站、CMS 後台管理、前端切版、API 串接</span><span data-lang="en">Campaign pages, brand sites, CMS management, UI markup, and API integration.</span></em>
+          </div></div>
+          <div class="row"><time>2024</time><div>
+            <b><span data-lang="zh">網頁公司｜網頁設計師</span><span data-lang="en">Web Agency — Web Designer</span></b>
+            <em><span data-lang="zh">形象網站、活動網站、CMS 後台、電商網站、SEO 優化</span><span data-lang="en">Brand sites, campaign sites, CMS back-ends, e-commerce, and SEO optimisation.</span></em>
+          </div></div>
+          <div class="row"><time>2012–24</time><div>
+            <b><span data-lang="zh">設計、科技、製造、電視台｜視覺設計師</span><span data-lang="en">Design, Tech, Manufacturing &amp; Media — Visual Designer</span></b>
+            <em><span data-lang="zh">平面、動態、網頁等多元視覺設計</span><span data-lang="en">Graphic design, motion graphics, and web visual design.</span></em>
+          </div></div>
+        </div>
+      </div>
+      <div class="blk">
+        <h2 class="en">EDUCATION</h2>
+        <div class="rows">
+          <div class="row"><time>2014–18</time><div>
+            <b><span data-lang="zh">景文科技大學</span><span data-lang="en">Jinwen University of Science and Technology</span></b>
+            <em><span data-lang="zh">視覺傳達設計</span><span data-lang="en">Visual Communication Design</span></em>
+          </div></div>
+        </div>
+      </div>
+      <div class="blk">
+        <h2 class="en">INTERESTS</h2>
+        <p>
+          <span data-lang="zh">熱愛重訓健身、戶外露營與廣泛閱讀。也喜歡探索與研究 AI Agent，發掘 AI 應用與工作流自動化的研究。</span>
+          <span data-lang="en">Passionate about weight training, outdoor camping, and broad reading. I also enjoy exploring AI Agents, discovering practical AI applications, and researching workflow automation.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="sheet__foot">
+      <span class="en">TAIPEI, TAIWAN</span>
+      <a class="en" href="mailto:youze81825@gmail.com">YOUZE81825@GMAIL.COM</a>
+      <a class="en" href="tel:+886958350322"><span data-lang="zh">0958 350 322</span><span data-lang="en">+886 958 350 322</span></a>
+      <span class="en">AVAILABLE FOR PROJECTS — 2026</span>
+    </div>
+  </section>
+
+  <div class="scroll-cue en"><i></i>SCROLL<i></i></div>
+</main>
+
+<!-- ======================= 跑馬燈 ======================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track" data-marquee data-speed="0.6">
+    <span><span data-lang="zh">系統規劃</span><span data-lang="en">SYSTEM PLANNING</span></span>
+    <span><span data-lang="zh">WordPress 客製化開發</span><span data-lang="en">CUSTOM WORDPRESS</span></span>
+    <span><span data-lang="zh">電商網站</span><span data-lang="en">E-COMMERCE</span></span>
+    <span><span data-lang="zh">前端切版</span><span data-lang="en">FRONT-END MARKUP</span></span>
+    <span><span data-lang="zh">API 串接</span><span data-lang="en">API INTEGRATION</span></span>
+    <span><span data-lang="zh">SEO 優化</span><span data-lang="en">SEO OPTIMISATION</span></span>
+    <span><span data-lang="zh">UI/UX 設計</span><span data-lang="en">UI/UX DESIGN</span></span>
+  </div>
+</div>
+
+<!-- ======================= WORK ======================= -->
+<section id="work">
+  <div class="sec-head">
+    <h2 class="en line"><span>SELECTED WORK</span></h2>
+    <p>
+      <span data-lang="zh">12 個上線中的案子。每一個都標明我實際負責的範圍，沒有掛名充數的。</span>
+      <span data-lang="en">Twelve live projects. Each one states exactly what I was responsible for — nothing padded.</span>
+    </p>
+  </div>
+
+  <div class="works">
+    <!-- ↓↓↓ 一個 .work 就是一個作品區塊，複製即可增減 ↓↓↓ -->
+
+    <article class="work">
+      <div class="work__media">
+        <span class="work__idx en">01 / 07</span>
+        <div class="shot">
+          <img src="img/1-01.jpg" alt="Coolify 品牌官網">
+          <div class="shot__curtain"></div>
+        </div>
+      </div>
+      <div class="work__body">
+        <div class="work__meta"><span>2026</span><span><span data-lang="zh">品牌官網</span><span data-lang="en">Brand Site</span></span><span><span data-lang="zh">前端開發</span><span data-lang="en">Front-end</span></span><span><span data-lang="zh">CMS 建置</span><span data-lang="en">CMS Build</span></span></div>
+        <h3 class="en" data-scramble>COOLIFY</h3>
+        <p class="sub"><span data-lang="zh">Coolify 全息散熱｜品牌官網</span><span data-lang="en">Coolify Holographic Cooling — brand site</span></p>
+        <p class="desc">
+          <span data-lang="zh">WordPress 客製化開發，沒有使用任何 WordPress 的編輯器。純手寫 HTML、CSS、JS，再轉成 PHP 透過外掛上傳至 WordPress，能夠不受限制地跟設計稿幾乎一樣，更有效率地製作好每一頁。</span>
+          <span data-lang="en">Custom WordPress development built without any visual builders. Hand-coded in HTML, CSS, and JS before being converted to PHP, allowing the final product to match the design flawlessly without creative restrictions, while maintaining high development efficiency.</span>
+        </p>
+        <dl class="roles"><dt class="en">MY ROLE</dt><dd>
+          <span><span data-lang="zh">前端開發</span><span data-lang="en">Front-end</span></span>
+          <span><span data-lang="zh">互動設計</span><span data-lang="en">Interaction Design</span></span>
+          <span><span data-lang="zh">前端重構</span><span data-lang="en">Front-end Refactoring</span></span>
+          <span><span data-lang="zh">後台教育訓練</span><span data-lang="en">CMS Training</span></span>
+          <span><span data-lang="zh">CMS 建置</span><span data-lang="en">CMS Build</span></span>
+        </dd></dl>
+        <div class="btn-row">
+          <a class="btn en" href="https://coolifycool.com/" target="_blank" rel="noopener" data-magnetic><span class="dot"></span>VIEW SITE</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="work__media">
+        <span class="work__idx en">02 / 07</span>
+        <div class="shot">
+          <img src="img/1-02.jpg" alt="網銀國際｜徵稿活動推廣">
+          <div class="shot__curtain"></div>
+        </div>
+      </div>
+      <div class="work__body">
+        <div class="work__meta"><span>2024</span><span><span data-lang="zh">活動宣傳</span><span data-lang="en">Campaign</span></span><span>UI/UX</span></div>
+        <h3 class="en" data-scramble>WANIN</h3>
+        <p class="sub"><span data-lang="zh">網銀國際｜徵稿活動推廣</span><span data-lang="en">Wanin International — Call for Entries</span></p>
+        <p class="desc">
+          <span data-lang="zh">與插畫家合作，並設計與規劃 UI/UX，同時負責網頁應用邏輯的系統規劃。</span>
+          <span data-lang="en">Collaborated with illustrators to design and plan the UI/UX, while mapping out the web application's system logic.</span>
+        </p>
+        <dl class="roles"><dt class="en">MY ROLE</dt><dd>
+          <span><span data-lang="zh">UI/UX 設計</span><span data-lang="en">UI/UX Design</span></span>
+          <span><span data-lang="zh">網頁系統邏輯規劃</span><span data-lang="en">System Logic Planning</span></span>
+          <span><span data-lang="zh">工程對接</span><span data-lang="en">Tech Integration</span></span>
+        </dd></dl>
+        <div class="btn-row">
+          <a class="btn en" href="https://vmission.wve.com.tw/%E6%B4%BB%E5%8B%95%E8%BE%A6%E6%B3%95/" target="_blank" rel="noopener" data-magnetic><span class="dot"></span><span>VIEW SITE <small style="font-size:10.5px; font-weight:400; opacity:0.7; letter-spacing:0.02em"><span data-lang="zh">（網頁已更換不同視覺）</span><span data-lang="en">(Visuals changed on live site)</span></small></span></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="work__media">
+        <span class="work__idx en">03 / 07</span>
+        <div class="shot">
+          <img src="img/1-06.jpg" alt="Sony BRAVIA 產品網站">
+          <div class="shot__curtain"></div>
+        </div>
+      </div>
+      <div class="work__body">
+        <div class="work__meta"><span>2019</span><span><span data-lang="zh">商品宣傳</span><span data-lang="en">Product Promo</span></span><span>UI/UX</span></div>
+        <h3 class="en" data-scramble>SONY</h3>
+        <p class="sub"><span data-lang="zh">Sony | Sony BRAVIA 產品網站</span><span data-lang="en">Sony — Sony BRAVIA Product Site</span></p>
+        <p class="desc">
+          <span data-lang="zh">設計與規劃 UI/UX，應用客戶提供的素材執行編列，也同時負責網頁應用邏輯的系統規劃。</span>
+          <span data-lang="en">Designed and planned the UI/UX, structured the layout using client-provided assets, and mapped out the web application's system logic.</span>
+        </p>
+        <dl class="roles"><dt class="en">MY ROLE</dt><dd>
+          <span><span data-lang="zh">UI/UX 設計</span><span data-lang="en">UI/UX Design</span></span>
+          <span><span data-lang="zh">網頁系統邏輯規劃</span><span data-lang="en">System Logic Planning</span></span>
+          <span><span data-lang="zh">工程對接</span><span data-lang="en">Tech Integration</span></span>
+        </dd></dl>
+        <div class="btn-row">
+          <a class="btn en" href="javascript:void(0)" style="cursor:default; pointer-events:none; opacity:0.8; border-color:var(--rule)"><span class="dot" style="opacity:0.3"></span><span>VIEW SITE <small style="font-size:10.5px; font-weight:400; opacity:0.7; letter-spacing:0.02em"><span data-lang="zh">（網頁已失連結）</span><span data-lang="en">(Site offline)</span></small></span></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="work__media">
+        <span class="work__idx en">04 / 07</span>
+        <div class="shot">
+          <img src="img/1-05.jpg" alt="悅・緹顏 | 品牌網站">
+          <div class="shot__curtain"></div>
+        </div>
+      </div>
+      <div class="work__body">
+        <div class="work__meta"><span>2023</span><span><span data-lang="zh">官網宣傳</span><span data-lang="en">Brand Site</span></span><span>UI/UX</span></div>
+        <h3 class="en" data-scramble>LIFTING</h3>
+        <p class="sub"><span data-lang="zh">悅・緹顏｜品牌網站</span><span data-lang="en">Lifting — Brand Site</span></p>
+        <p class="desc">
+          <span data-lang="zh">設計與規劃 UI/UX，負責網頁應用邏輯的系統規劃，以及 CMS 系統建置。</span>
+          <span data-lang="en">Designed and planned the UI/UX, mapped out the web application's system logic, and built the CMS.</span>
+        </p>
+        <dl class="roles"><dt class="en">MY ROLE</dt><dd>
+          <span><span data-lang="zh">UI/UX 設計</span><span data-lang="en">UI/UX Design</span></span>
+          <span><span data-lang="zh">網頁系統邏輯規劃</span><span data-lang="en">System Logic Planning</span></span>
+          <span><span data-lang="zh">工程對接</span><span data-lang="en">Tech Integration</span></span>
+          <span><span data-lang="zh">CMS 建立</span><span data-lang="en">CMS Build</span></span>
+        </dd></dl>
+        <div class="btn-row">
+          <a class="btn en" href="https://www.lifting-clinic.com/" target="_blank" rel="noopener" data-magnetic><span class="dot"></span>VIEW SITE</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="work__media">
+        <span class="work__idx en">05 / 07</span>
+        <div class="shot">
+          <img src="img/1-07.jpg" alt="芮恩 | 品牌網站">
+          <div class="shot__curtain"></div>
+        </div>
+      </div>
+      <div class="work__body">
+        <div class="work__meta"><span>2023</span><span><span data-lang="zh">官網宣傳</span><span data-lang="en">Brand Site</span></span><span>UI/UX</span></div>
+        <h3 class="en" data-scramble>RAINSSOM</h3>
+        <p class="sub"><span data-lang="zh">芮恩｜品牌網站</span><span data-lang="en">Rainssom — Brand Site</span></p>
+        <p class="desc">
+          <span data-lang="zh">設計與規劃 UI/UX，負責網頁應用邏輯的系統規劃，以及 CMS 系統建置。</span>
+          <span data-lang="en">Designed and planned the UI/UX, mapped out the web application's system logic, and built the CMS.</span>
+        </p>
+        <dl class="roles"><dt class="en">MY ROLE</dt><dd>
+          <span><span data-lang="zh">UI/UX 設計</span><span data-lang="en">UI/UX Design</span></span>
+          <span><span data-lang="zh">網頁系統邏輯規劃</span><span data-lang="en">System Logic Planning</span></span>
+          <span><span data-lang="zh">工程對接</span><span data-lang="en">Tech Integration</span></span>
+          <span><span data-lang="zh">CMS 建立</span><span data-lang="en">CMS Build</span></span>
+        </dd></dl>
+        <div class="btn-row">
+          <a class="btn en" href="https://www.rainssom.com/" target="_blank" rel="noopener" data-magnetic><span class="dot"></span>VIEW SITE</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="work__media">
+        <span class="work__idx en">06 / 07</span>
+        <div class="shot">
+          <img src="img/1-03.jpg" alt="星展銀行 | 金融商品頁面宣傳">
+          <div class="shot__curtain"></div>
+        </div>
+      </div>
+      <div class="work__body">
+        <div class="work__meta"><span>2026</span><span>Landing Page</span><span><span data-lang="zh">前端開發</span><span data-lang="en">Front-end</span></span></div>
+        <h3 class="en" data-scramble>DBS BANK</h3>
+        <p class="sub"><span data-lang="zh">星展銀行｜金融商品頁面宣傳</span><span data-lang="en">DBS Bank — Financial Product Landing Page</span></p>
+        <p class="desc">
+          <span data-lang="zh">負責 Landing Page 網頁前端工程切版，並實作輪播功能、RWD 響應式排版以及 API 串接功能開發。</span>
+          <span data-lang="en">Responsible for front-end development of the landing page, implementing carousels, responsive web design (RWD), and API integrations.</span>
+        </p>
+        <dl class="roles"><dt class="en">MY ROLE</dt><dd>
+          <span><span data-lang="zh">前端切版</span><span data-lang="en">Front-end Dev</span></span>
+          <span><span data-lang="zh">API 串接</span><span data-lang="en">API Integration</span></span>
+          <span><span data-lang="zh">響應式設計</span><span data-lang="en">RWD</span></span>
+        </dd></dl>
+        <div class="btn-row">
+          <a class="btn en" href="https://private-1-dusky.vercel.app" target="_blank" rel="noopener" data-magnetic><span class="dot"></span><span>VIEW SITE <small style="font-size:10.5px; font-weight:400; opacity:0.7; letter-spacing:0.02em"><span data-lang="zh">（正式已下架，此為作品展示，勿外傳）</span><span data-lang="en">(Demo only, do not share)</span></small></span></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="work__media">
+        <span class="work__idx en">07 / 07</span>
+        <div class="shot">
+          <img src="img/1-04.jpg" alt="遠東商業銀行 | 金融商品頁面宣傳">
+          <div class="shot__curtain"></div>
+        </div>
+      </div>
+      <div class="work__body">
+        <div class="work__meta"><span>2026</span><span>Landing Page</span><span><span data-lang="zh">前端開發 / Pop-up</span><span data-lang="en">Front-end / Pop-up</span></span></div>
+        <h3 class="en" data-scramble>FAR EASTERN INT'L BANK</h3>
+        <p class="sub"><span data-lang="zh">遠東商業銀行｜金融商品頁面宣傳</span><span data-lang="en">Far Eastern Int'l Bank — Financial Product Landing Page</span></p>
+        <p class="desc">
+          <span data-lang="zh">負責 Landing Page 網頁前端工程切版，包含 RWD 響應式排版以及 16 頁 Pop-up 彈出視窗開發。</span>
+          <span data-lang="en">Responsible for front-end development of the landing page, including responsive web design (RWD) and 16 pop-up modals.</span>
+        </p>
+        <dl class="roles"><dt class="en">MY ROLE</dt><dd>
+          <span><span data-lang="zh">前端切版</span><span data-lang="en">Front-end Dev</span></span>
+          <span><span data-lang="zh">響應式設計</span><span data-lang="en">RWD</span></span>
+          <span><span data-lang="zh">Pop-up 開發</span><span data-lang="en">Pop-up Dev</span></span>
+        </dd></dl>
+        <div class="btn-row">
+          <a class="btn en" href="https://www.feib.com.tw/upload/creditcard/HWCard/index.html" target="_blank" rel="noopener" data-magnetic><span class="dot"></span><span>VIEW SITE <small style="font-size:10.5px; font-weight:400; opacity:0.7; letter-spacing:0.02em"><span data-lang="zh">（此為作品展示，勿外傳）</span><span data-lang="en">(Demo only, do not share)</span></small></span></a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<div class="counter en" aria-hidden="true"><b>01</b> / 07</div>
+
+<!-- ======================= CLIENTS ======================= -->
+<section id="clients" class="clients">
+  <div class="sec-head sec-head--flush">
+    <h2 class="en">CLIENTS</h2>
+    <p>
+      <span data-lang="zh">此包含平面與影像合作的客戶，如需看作品請點擊 <a href="https://www.behance.net/gallery/172413697/_" target="_blank" rel="noopener" style="text-decoration:underline; color:currentColor;">Behance</a></span>
+      <span data-lang="en">This includes clients from graphic and video collaborations. To view these works, please visit <a href="https://www.behance.net/gallery/172413697/_" target="_blank" rel="noopener" style="text-decoration:underline; color:currentColor;">Behance</a>.</span>
+    </p>
+  </div>
+  <div class="logo-grid">
+    <div class="logo"><img src="img/logo/Sony_logo.svg" alt="Client Logo"></div>
+    <div class="logo"><img src="img/logo/mb-star-white.svg" alt="Client Logo"></div>
+    <div class="logo"><img src="img/logo/Netherlands-Office-Taipei-1024x345.png" alt="Client Logo"></div>
+    <div class="logo"><img src="img/logo/splashLogo.png" alt="Client Logo"></div>
+    <div class="logo"><img src="img/logo/dbs_logo.svg" alt="Client Logo"></div>
+    <div class="logo"><img src="img/logo/logo1.png" alt="Client Logo"></div>
+    <div class="logo"><img src="img/logo/KIA_logo.png" alt="Client Logo"></div>
+    <div class="logo"><img src="img/logo/Group-85963.png" alt="Client Logo"></div>
+    <div class="logo"><img src="img/logo/waninlogo.svg" alt="Client Logo"></div>
+    <div class="logo"><img src="img/logo/%E5%9C%96%E5%B1%A4_1.png" alt="Client Logo"></div>
+  </div>
+</section>
+
+<!-- ======================= CONTACT ======================= -->
+<section id="contact" class="contact">
+  <h2 class="en line"><span>LET'S BUILD<br>SOMETHING.</span></h2>
+  <div class="contact__grid">
+    <div><h3 class="en">EMAIL</h3><p><a href="mailto:youze81825@gmail.com">youze81825@gmail.com</a></p></div>
+    <div><h3 class="en">PHONE</h3><p><a href="tel:+886958350322"><span data-lang="zh">0958 350 322</span><span data-lang="en">+886 958 350 322</span></a></p></div>
+    <div><h3 class="en">LINKS</h3><p><a href="https://www.behance.net/gallery/172413697/_" target="_blank" rel="noopener">Behance</a></p></div>
+    <div><h3 class="en">NOTICE</h3><p>
+      <span data-lang="zh">此為作品展示，請勿將網頁外傳，謝謝。</span>
+      <span data-lang="en">This is a portfolio showcase. Please do not share this site externally. Thank you.</span>
+    </p></div>
+  </div>
+</section>
+
+<footer>
+  <span class="en">© 2026 CHEN YU-HAO</span>
+  <span class="en">DESIGNED &amp; BUILT BY MYSELF</span>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CHEN YU-HAO — Web Developer / 網頁前端與系統整合</title>
+<meta name="description" content="前端工程師陳昱豪的作品集：網站開發、前後端串接、系統整合。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<!-- 在畫面繪製前先套用上次的設定，避免閃一下白底或閃一下中文 -->
+<script>
+try{
+  var _t = localStorage.getItem("theme");
+  if(_t) document.documentElement.dataset.theme = _t;
+  var _l = localStorage.getItem("lang");
+  if(_l) document.documentElement.lang = (_l === "en" ? "en" : "zh-Hant");
+}catch(e){}
+</script>
+</head>
+<body>
+
+<div class="cursor" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"></div>
+
+<header class="nav">
+  <a class="nav__mark en" href="#top"><span>CHEN YU-HAO</span></a>
+
+  <div class="nav__right">
+    <nav class="nav__links en" aria-label="主選單">
+      <a href="#top">RESUME</a>
+      <a href="#work">WORK</a>
+      <a href="#clients">CLIENTS</a>
+    </nav>
+
+    <div class="switches">
+      <button class="sw sw--lang en" id="langBtn" type="button" aria-label="Switch language / 切換語言">
+        <span data-lang="zh">EN</span><span data-lang="en">中文</span>
+      </button>
+      <button class="sw sw--theme" id="themeBtn" type="button" aria-label="Switch colour theme / 切換深淺色" aria-pressed="false">
+        <span class="sw__disc" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <a class="nav__cta en" href="#contact"><span data-lang="zh">聯絡我</span><span data-lang="en">CONTACT</span></a>
+  </div>
+</header>
+
+<!-- ======================= HERO 履歷 16:9 ======================= -->
+<main id="top" class="hero">
+  <section class="sheet" aria-label="履歷表 / Resume">
+
+    <!-- 左欄 -->
+    <div class="cell">
+      <div class="portrait">
+        <!-- 換成你的照片：<img src="img/me.jpg" alt="陳昱豪"> -->
+        <div class="portrait__ph">PHOTO<br>800 × 1000</div>
+      </div>
+      <div class="name">
+        <h1 class="en line"><span>CHEN<br>YU-HAO</span></h1>
+        <div class="han line"><span style="--d:80ms"><span data-lang="zh">陳昱豪 ／ 網頁前端工程師</span><span data-lang="en">FRONT-END DEVELOPER &amp; INTEGRATOR</span></span></div>
+      </div>
+    </div>
+
+    <!-- 中欄 -->
+    <div class="cell">
+      <div class="blk">
+        <h2 class="en">PROFILE</h2>
+        <p class="zh-lead">
+          <span data-lang="zh">做網站第 8 年，從切版一路做到能自己扛完一個案子。擅長把設計稿的細節不打折地實作出來，也能在時程壓縮時判斷哪裡該收、哪裡不能讓。習慣在動工前先把資料結構和後台流程想清楚，因為那通常才是案子會不會爆的地方。</span>
+          <span data-lang="en">Eight years building websites, from slicing layouts to running an entire project alone. I implement design without cutting corners, and I know which details can go when a deadline tightens. I map out the data structure and the CMS flow before writing code, because that is usually where a project falls apart.</span>
+        </p>
+      </div>
+      <div class="blk">
+        <h2 class="en">CORE SKILLS</h2>
+        <div class="bars">
+          <div class="bar"><i>HTML / CSS</i><span class="track"><b data-w="96"></b></span><span class="pct">96</span></div>
+          <div class="bar"><i>JavaScript</i><span class="track"><b data-w="90"></b></span><span class="pct">90</span></div>
+          <div class="bar"><i>Vue / React</i><span class="track"><b data-w="84"></b></span><span class="pct">84</span></div>
+          <div class="bar"><i><span data-lang="zh">後端 / API</span><span data-lang="en">Backend / API</span></i><span class="track"><b data-w="72"></b></span><span class="pct">72</span></div>
+          <div class="bar"><i><span data-lang="zh">系統整合</span><span data-lang="en">Integration</span></i><span class="track"><b data-w="80"></b></span><span class="pct">80</span></div>
+        </div>
+      </div>
+      <div class="blk">
+        <h2 class="en">SYSTEM INTEGRATION</h2>
+        <div class="tags">
+          <span><span data-lang="zh">金流串接</span><span data-lang="en">Payment Gateways</span></span>
+          <span><span data-lang="zh">物流 API</span><span data-lang="en">Logistics API</span></span>
+          <span><span data-lang="zh">ERP 對接</span><span data-lang="en">ERP Sync</span></span>
+          <span><span data-lang="zh">會員 SSO</span><span data-lang="en">Member SSO</span></span>
+          <span>LINE Official</span>
+          <span><span data-lang="zh">第三方登入</span><span data-lang="en">Social Login</span></span>
+          <span>GA4 / GTM</span>
+          <span><span data-lang="zh">CI 自動部署</span><span data-lang="en">CI / CD</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 右欄 -->
+    <div class="cell">
+      <div class="blk">
+        <h2 class="en">EXPERIENCE</h2>
+        <div class="rows">
+          <div class="row"><time>2022–</time><div>
+            <b><span data-lang="zh">自由接案 Freelance</span><span data-lang="en">Freelance</span></b>
+            <em><span data-lang="zh">網站規劃、前端開發、系統串接，累積 40＋ 個案子</span><span data-lang="en">Site planning, front-end development and system integration. 40+ projects delivered.</span></em>
+          </div></div>
+          <div class="row"><time>2020–22</time><div>
+            <b><span data-lang="zh">某數位整合｜前端組長</span><span data-lang="en">Digital Agency — Front-end Lead</span></b>
+            <em><span data-lang="zh">帶 3 人小組，負責電商與品牌官網</span><span data-lang="en">Led a team of three on e-commerce and brand sites.</span></em>
+          </div></div>
+          <div class="row"><time>2018–20</time><div>
+            <b><span data-lang="zh">某設計公司｜網頁工程師</span><span data-lang="en">Design Studio — Web Developer</span></b>
+            <em><span data-lang="zh">形象網站、活動網站、CMS 後台</span><span data-lang="en">Brand sites, campaign sites and CMS back-ends.</span></em>
+          </div></div>
+        </div>
+      </div>
+      <div class="blk">
+        <h2 class="en">EDUCATION</h2>
+        <div class="rows">
+          <div class="row"><time>2014–18</time><div>
+            <b><span data-lang="zh">○○大學 資訊傳播學系</span><span data-lang="en">○○ University — Information &amp; Communication</span></b>
+            <em><span data-lang="zh">主修互動設計與網頁技術</span><span data-lang="en">Majored in interaction design and web technology.</span></em>
+          </div></div>
+        </div>
+      </div>
+      <div class="blk">
+        <h2 class="en">INTERESTS</h2>
+        <p>
+          <span data-lang="zh">爬山、底片攝影、字體收集。假日會拆別人的網站看他們怎麼寫，算是職業病。</span>
+          <span data-lang="en">Hiking, film photography, collecting typefaces. At weekends I take other people's sites apart to see how they were built — occupational hazard.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="sheet__foot">
+      <span class="en">TAIPEI, TAIWAN</span>
+      <a class="en" href="mailto:hello@yourdomain.com">HELLO@YOURDOMAIN.COM</a>
+      <a class="en" href="tel:+886900000000">+886 900 000 000</a>
+      <span class="en">AVAILABLE FOR PROJECTS — 2026</span>
+    </div>
+  </section>
+
+  <div class="scroll-cue en"><i></i>SCROLL<i></i></div>
+</main>
+
+<!-- ======================= 跑馬燈 ======================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track" data-marquee data-speed="0.6">
+    <span>RWD</span>
+    <span><span data-lang="zh">電商網站</span><span data-lang="en">E-COMMERCE</span></span>
+    <span>ANIMATION</span>
+    <span><span data-lang="zh">系統整合</span><span data-lang="en">INTEGRATION</span></span>
+    <span>CMS</span>
+    <span><span data-lang="zh">API 串接</span><span data-lang="en">API</span></span>
+    <span><span data-lang="zh">效能優化</span><span data-lang="en">PERFORMANCE</span></span>
+    <span>SEO</span>
+  </div>
+</div>
+
+<!-- ======================= WORK ======================= -->
+<section id="work">
+  <div class="sec-head">
+    <h2 class="en line"><span>SELECTED WORK</span></h2>
+    <p>
+      <span data-lang="zh">12 個上線中的案子。每一個都標明我實際負責的範圍，沒有掛名充數的。</span>
+      <span data-lang="en">Twelve live projects. Each one states exactly what I was responsible for — nothing padded.</span>
+    </p>
+  </div>
+
+  <div class="works">
+    <!-- ↓↓↓ 一個 .work 就是一個作品區塊，複製即可增減 ↓↓↓ -->
+
+    <article class="work">
+      <div class="work__media">
+        <span class="work__idx en">01 / 12</span>
+        <div class="shot">
+          <!-- <img src="img/work-01.jpg" alt="森林咖啡烘豆所 官網"> -->
+          <div class="shot__ph">SCREENSHOT 1600 × 1000</div>
+          <div class="shot__curtain"></div>
+        </div>
+      </div>
+      <div class="work__body">
+        <div class="work__meta"><span>2026</span><span><span data-lang="zh">品牌官網</span><span data-lang="en">Brand Site</span></span><span>Vue 3</span></div>
+        <h3 class="en" data-scramble>FOREST ROASTERY</h3>
+        <p class="sub"><span data-lang="zh">森林咖啡烘豆所｜品牌官網 + 線上訂購</span><span data-lang="en">Forest Roastery — brand site &amp; online store</span></p>
+        <p class="desc">
+          <span data-lang="zh">單頁滾動敘事搭配產地地圖，把烘焙曲線做成可互動的圖表。訂購流程刻意壓到三步完成，行動版轉換率上線後成長約四成。</span>
+          <span data-lang="en">A single-page scrolling narrative with an origin map, and roast curves rendered as interactive charts. Checkout was deliberately cut to three steps; mobile conversion rose about 40% after launch.</span>
+        </p>
+        <dl class="roles"><dt class="en">MY ROLE</dt><dd>
+          <span><span data-lang="zh">前端開發</span><span data-lang="en">Front-end</span></span>
+          <span><span data-lang="zh">互動設計</span><span data-lang="en">Interaction Design</span></span>
+          <span><span data-lang="zh">金流串接</span><span data-lang="en">Payment Gateway</span></span>
+          <span><span data-lang="zh">效能優化</span><span data-lang="en">Performance</span></span>
+        </dd></dl>
+        <div class="btn-row">
+          <a class="btn en" href="https://example.com" target="_blank" rel="noopener" data-magnetic><span class="dot"></span>VIEW SITE</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="work__media">
+        <span class="work__idx en">02 / 12</span>
+        <div class="shot">
+          <div class="shot__ph">SCREENSHOT 1600 × 1000</div>
+          <div class="shot__curtain"></div>
+        </div>
+      </div>
+      <div class="work__body">
+        <div class="work__meta"><span>2025</span><span><span data-lang="zh">電商</span><span data-lang="en">E-commerce</span></span><span>Shopify</span></div>
+        <h3 class="en" data-scramble>MUJI LIVING</h3>
+        <p class="sub"><span data-lang="zh">無印生活選物｜電商改版</span><span data-lang="en">Muji Living — e-commerce replatform</span></p>
+        <p class="desc">
+          <span data-lang="zh">既有三千筆商品資料的整站搬遷，重寫商品結構與篩選邏輯。加入即時庫存顯示，把客服的缺貨詢問量砍掉一半。</span>
+          <span data-lang="en">Migrating 3,000 SKUs meant rewriting the product schema and filter logic from scratch. Live stock levels halved the out-of-stock enquiries reaching support.</span>
+        </p>
+        <dl class="roles"><dt class="en">MY ROLE</dt><dd>
+          <span><span data-lang="zh">前端重構</span><span data-lang="en">Front-end Rebuild</span></span>
+          <span><span data-lang="zh">資料搬遷</span><span data-lang="en">Data Migration</span></span>
+          <span><span data-lang="zh">ERP 對接</span><span data-lang="en">ERP Sync</span></span>
+          <span><span data-lang="zh">後台教育訓練</span><span data-lang="en">Client Training</span></span>
+        </dd></dl>
+        <div class="btn-row">
+          <a class="btn en" href="https://example.com" target="_blank" rel="noopener" data-magnetic><span class="dot"></span>VIEW SITE</a>
+          <a class="btn btn--ghost en" href="#contact" data-magnetic><span data-lang="zh">案例說明</span><span data-lang="en">CASE STUDY</span></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="work__media">
+        <span class="work__idx en">03 / 12</span>
+        <div class="shot"><div class="shot__ph">SCREENSHOT 1600 × 1000</div><div class="shot__curtain"></div></div>
+      </div>
+      <div class="work__body">
+        <div class="work__meta"><span>2025</span><span><span data-lang="zh">活動網站</span><span data-lang="en">Campaign Site</span></span><span>GSAP</span></div>
+        <h3 class="en" data-scramble>TAIPEI DESIGN WEEK</h3>
+        <p class="sub"><span data-lang="zh">台北設計週｜線上展覽</span><span data-lang="en">Taipei Design Week — online exhibition</span></p>
+        <p class="desc">
+          <span data-lang="zh">橫向捲動的展場動線，滑鼠與觸控都能拖曳。三十組參展單位的資料由 CMS 動態生成，展期中主辦可自行更新。</span>
+          <span data-lang="en">A horizontally scrolling exhibition route, draggable by both mouse and touch. All thirty exhibitors are driven by the CMS so the organiser can update during the show.</span>
+        </p>
+        <dl class="roles"><dt class="en">MY ROLE</dt><dd>
+          <span><span data-lang="zh">互動開發</span><span data-lang="en">Interaction Dev</span></span>
+          <span><span data-lang="zh">CMS 建置</span><span data-lang="en">CMS Build</span></span>
+          <span><span data-lang="zh">跨瀏覽器測試</span><span data-lang="en">Cross-browser QA</span></span>
+        </dd></dl>
+        <div class="btn-row"><a class="btn en" href="https://example.com" target="_blank" rel="noopener" data-magnetic><span class="dot"></span>VIEW SITE</a></div>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="work__media">
+        <span class="work__idx en">04 / 12</span>
+        <div class="shot"><div class="shot__ph">SCREENSHOT 1600 × 1000</div><div class="shot__curtain"></div></div>
+      </div>
+      <div class="work__body">
+        <div class="work__meta"><span>2025</span><span><span data-lang="zh">企業官網</span><span data-lang="en">Corporate</span></span><span>Next.js</span></div>
+        <h3 class="en" data-scramble>HONG SHENG GROUP</h3>
+        <p class="sub"><span data-lang="zh">宏昇集團｜企業形象網站</span><span data-lang="en">Hong Sheng Group — corporate website</span></p>
+        <p class="desc">
+          <span data-lang="zh">四個事業體共用一套版型但各自有識別色，後台只維護一份內容。多語系（中／英／日）由同一組資料表驅動。</span>
+          <span data-lang="en">Four business units share one template with their own identity colours, maintained from a single set of content. All three languages run off the same data tables.</span>
+        </p>
+        <dl class="roles"><dt class="en">MY ROLE</dt><dd>
+          <span><span data-lang="zh">前端架構</span><span data-lang="en">Front-end Architecture</span></span>
+          <span><span data-lang="zh">多語系</span><span data-lang="en">i18n</span></span>
+          <span>SEO</span>
+          <span><span data-lang="zh">SSR 部署</span><span data-lang="en">SSR Deployment</span></span>
+        </dd></dl>
+        <div class="btn-row"><a class="btn en" href="https://example.com" target="_blank" rel="noopener" data-magnetic><span class="dot"></span>VIEW SITE</a></div>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="work__media">
+        <span class="work__idx en">05 / 12</span>
+        <div class="shot"><div class="shot__ph">SCREENSHOT 1600 × 1000</div><div class="shot__curtain"></div></div>
+      </div>
+      <div class="work__body">
+        <div class="work__meta"><span>2024</span><span><span data-lang="zh">訂位系統</span><span data-lang="en">Reservations</span></span><span>Vue + Firebase</span></div>
+        <h3 class="en" data-scramble>KOJI OMAKASE</h3>
+        <p class="sub"><span data-lang="zh">麴 Omakase｜餐廳官網與線上訂位</span><span data-lang="en">Koji Omakase — restaurant site &amp; booking</span></p>
+        <p class="desc">
+          <span data-lang="zh">訂位直接寫進店家原本用的 Google 日曆，不用再學新系統。滿位時自動排候補並發 LINE 通知。</span>
+          <span data-lang="en">Bookings write straight into the Google Calendar the restaurant already used, so nobody had to learn a new system. When full it queues a waitlist and notifies guests over LINE.</span>
+        </p>
+        <dl class="roles"><dt class="en">MY ROLE</dt><dd>
+          <span><span data-lang="zh">全端開發</span><span data-lang="en">Full-stack</span></span>
+          <span><span data-lang="zh">LINE 通知串接</span><span data-lang="en">LINE Messaging API</span></span>
+          <span><span data-lang="zh">日曆 API</span><span data-lang="en">Calendar API</span></span>
+        </dd></dl>
+        <div class="btn-row"><a class="btn en" href="https://example.com" target="_blank" rel="noopener" data-magnetic><span class="dot"></span>VIEW SITE</a></div>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="work__media">
+        <span class="work__idx en">06 / 12</span>
+        <div class="shot"><div class="shot__ph">SCREENSHOT 1600 × 1000</div><div class="shot__curtain"></div></div>
+      </div>
+      <div class="work__body">
+        <div class="work__meta"><span>2024</span><span><span data-lang="zh">作品集</span><span data-lang="en">Portfolio</span></span><span>WebGL</span></div>
+        <h3 class="en" data-scramble>LIN STUDIO</h3>
+        <p class="sub"><span data-lang="zh">林攝影工作室｜作品集網站</span><span data-lang="en">Lin Photography — portfolio site</span></p>
+        <p class="desc">
+          <span data-lang="zh">兩百多張高解析照片的載入策略是主要難題，用漸進式載入加預先解碼，把首屏時間壓在一秒內。</span>
+          <span data-lang="en">Loading 200-plus high-resolution photographs was the real problem; progressive loading with pre-decoding keeps first paint under a second.</span>
+        </p>
+        <dl class="roles"><dt class="en">MY ROLE</dt><dd>
+          <span><span data-lang="zh">前端開發</span><span data-lang="en">Front-end</span></span>
+          <span><span data-lang="zh">圖片最佳化</span><span data-lang="en">Image Optimisation</span></span>
+          <span><span data-lang="zh">WebGL 轉場</span><span data-lang="en">WebGL Transitions</span></span>
+        </dd></dl>
+        <div class="btn-row"><a class="btn en" href="https://example.com" target="_blank" rel="noopener" data-magnetic><span class="dot"></span>VIEW SITE</a></div>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="work__media">
+        <span class="work__idx en">07 / 12</span>
+        <div class="shot"><div class="shot__ph">SCREENSHOT 1600 × 1000</div><div class="shot__curtain"></div></div>
+      </div>
+      <div class="work__body">
+        <div class="work__meta"><span>2024</span><span>SaaS</span><span>React</span></div>
+        <h3 class="en" data-scramble>CARGO DESK</h3>
+        <p class="sub"><span data-lang="zh">貨櫃調度管理平台</span><span data-lang="en">Container dispatch platform</span></p>
+        <p class="desc">
+          <span data-lang="zh">替物流業者做的內部後台，一天要處理上千筆調度。表格全部虛擬滾動，操作過程不用等 loading。</span>
+          <span data-lang="en">An internal back office for a logistics operator handling a thousand dispatches a day. Every table is virtualised, so nothing waits on a spinner.</span>
+        </p>
+        <dl class="roles"><dt class="en">MY ROLE</dt><dd>
+          <span><span data-lang="zh">前端主導</span><span data-lang="en">Front-end Lead</span></span>
+          <span><span data-lang="zh">元件庫建立</span><span data-lang="en">Component Library</span></span>
+          <span><span data-lang="zh">權限設計</span><span data-lang="en">Permissions</span></span>
+          <span><span data-lang="zh">效能調校</span><span data-lang="en">Performance</span></span>
+        </dd></dl>
+        <div class="btn-row"><a class="btn en" href="https://example.com" target="_blank" rel="noopener" data-magnetic><span class="dot"></span>VIEW SITE</a></div>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="work__media">
+        <span class="work__idx en">08 / 12</span>
+        <div class="shot"><div class="shot__ph">SCREENSHOT 1600 × 1000</div><div class="shot__curtain"></div></div>
+      </div>
+      <div class="work__body">
+        <div class="work__meta"><span>2023</span><span><span data-lang="zh">公部門</span><span data-lang="en">Public Sector</span></span><span><span data-lang="zh">無障礙 AA</span><span data-lang="en">WCAG AA</span></span></div>
+        <h3 class="en" data-scramble>CULTURE BUREAU</h3>
+        <p class="sub"><span data-lang="zh">某縣市文化局｜藝文資訊網</span><span data-lang="en">City Cultural Affairs Bureau — arts portal</span></p>
+        <p class="desc">
+          <span data-lang="zh">通過無障礙 AA 檢測，鍵盤可完整操作。活動資料自開放平台每日同步，不需人工上稿。</span>
+          <span data-lang="en">Passes accessibility AA and is fully keyboard operable. Event data syncs daily from the open data platform with no manual entry.</span>
+        </p>
+        <dl class="roles"><dt class="en">MY ROLE</dt><dd>
+          <span><span data-lang="zh">無障礙實作</span><span data-lang="en">Accessibility</span></span>
+          <span><span data-lang="zh">資料自動同步</span><span data-lang="en">Data Sync</span></span>
+          <span><span data-lang="zh">驗收文件</span><span data-lang="en">Compliance Docs</span></span>
+        </dd></dl>
+        <div class="btn-row"><a class="btn en" href="https://example.com" target="_blank" rel="noopener" data-magnetic><span class="dot"></span>VIEW SITE</a></div>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="work__media">
+        <span class="work__idx en">09 / 12</span>
+        <div class="shot"><div class="shot__ph">SCREENSHOT 1600 × 1000</div><div class="shot__curtain"></div></div>
+      </div>
+      <div class="work__body">
+        <div class="work__meta"><span>2023</span><span><span data-lang="zh">募資頁</span><span data-lang="en">Campaign</span></span><span>Landing</span></div>
+        <h3 class="en" data-scramble>SOLAR BOTTLE</h3>
+        <p class="sub"><span data-lang="zh">太陽瓶｜群眾募資專案頁</span><span data-lang="en">Solar Bottle — crowdfunding campaign page</span></p>
+        <p class="desc">
+          <span data-lang="zh">上線 24 小時達標。進度條與留言即時更新，行動版首屏就能看到集資金額與倒數。</span>
+          <span data-lang="en">Funded within 24 hours. The progress bar and comments update live, and on mobile the total and countdown sit above the fold.</span>
+        </p>
+        <dl class="roles"><dt class="en">MY ROLE</dt><dd>
+          <span><span data-lang="zh">切版</span><span data-lang="en">Markup</span></span>
+          <span><span data-lang="zh">即時資料</span><span data-lang="en">Realtime Data</span></span>
+          <span><span data-lang="zh">A/B 測試</span><span data-lang="en">A/B Testing</span></span>
+        </dd></dl>
+        <div class="btn-row"><a class="btn en" href="https://example.com" target="_blank" rel="noopener" data-magnetic><span class="dot"></span>VIEW SITE</a></div>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="work__media">
+        <span class="work__idx en">10 / 12</span>
+        <div class="shot"><div class="shot__ph">SCREENSHOT 1600 × 1000</div><div class="shot__curtain"></div></div>
+      </div>
+      <div class="work__body">
+        <div class="work__meta"><span>2023</span><span><span data-lang="zh">教育</span><span data-lang="en">Education</span></span><span>WordPress</span></div>
+        <h3 class="en" data-scramble>OPEN CLASSROOM</h3>
+        <p class="sub"><span data-lang="zh">開放教室｜線上課程平台</span><span data-lang="en">Open Classroom — online course platform</span></p>
+        <p class="desc">
+          <span data-lang="zh">課程、金流、會員三套系統整合在同一個後台。老師可以自己排課與退費，不用找工程師。</span>
+          <span data-lang="en">Courses, payments and memberships integrated behind a single admin panel. Teachers schedule classes and issue refunds themselves.</span>
+        </p>
+        <dl class="roles"><dt class="en">MY ROLE</dt><dd>
+          <span><span data-lang="zh">系統整合</span><span data-lang="en">System Integration</span></span>
+          <span><span data-lang="zh">金流串接</span><span data-lang="en">Payment Gateway</span></span>
+          <span><span data-lang="zh">佈景主題開發</span><span data-lang="en">Theme Development</span></span>
+        </dd></dl>
+        <div class="btn-row"><a class="btn en" href="https://example.com" target="_blank" rel="noopener" data-magnetic><span class="dot"></span>VIEW SITE</a></div>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="work__media">
+        <span class="work__idx en">11 / 12</span>
+        <div class="shot"><div class="shot__ph">SCREENSHOT 1600 × 1000</div><div class="shot__curtain"></div></div>
+      </div>
+      <div class="work__body">
+        <div class="work__meta"><span>2022</span><span><span data-lang="zh">建築</span><span data-lang="en">Architecture</span></span><span>Three.js</span></div>
+        <h3 class="en" data-scramble>ATELIER WU</h3>
+        <p class="sub"><span data-lang="zh">吳建築事務所｜作品網站</span><span data-lang="en">Atelier Wu — architecture practice</span></p>
+        <p class="desc">
+          <span data-lang="zh">建案以 3D 平面圖呈現，可切換樓層與家具配置。模型檔壓縮後只有原本的八分之一。</span>
+          <span data-lang="en">Projects are presented as 3D floor plans with switchable levels and furniture layouts. The compressed models are an eighth of their original size.</span>
+        </p>
+        <dl class="roles"><dt class="en">MY ROLE</dt><dd>
+          <span><span data-lang="zh">3D 開發</span><span data-lang="en">3D Development</span></span>
+          <span><span data-lang="zh">模型輕量化</span><span data-lang="en">Model Optimisation</span></span>
+          <span><span data-lang="zh">前端開發</span><span data-lang="en">Front-end</span></span>
+        </dd></dl>
+        <div class="btn-row"><a class="btn en" href="https://example.com" target="_blank" rel="noopener" data-magnetic><span class="dot"></span>VIEW SITE</a></div>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="work__media">
+        <span class="work__idx en">12 / 12</span>
+        <div class="shot"><div class="shot__ph">SCREENSHOT 1600 × 1000</div><div class="shot__curtain"></div></div>
+      </div>
+      <div class="work__body">
+        <div class="work__meta"><span>2022</span><span><span data-lang="zh">飯店</span><span data-lang="en">Hospitality</span></span><span><span data-lang="zh">訂房串接</span><span data-lang="en">Booking API</span></span></div>
+        <h3 class="en" data-scramble>SEASIDE HOTEL</h3>
+        <p class="sub"><span data-lang="zh">海線旅宿｜官網與訂房</span><span data-lang="en">Seaside Hotel — website &amp; booking</span></p>
+        <p class="desc">
+          <span data-lang="zh">串接既有訂房系統，官網直訂比例從一成拉到三成五。房型頁用環景照取代傳統輪播。</span>
+          <span data-lang="en">Integrated with the existing booking engine; direct bookings went from 10% to 35%. Room pages use 360° panoramas instead of a carousel.</span>
+        </p>
+        <dl class="roles"><dt class="en">MY ROLE</dt><dd>
+          <span><span data-lang="zh">前端開發</span><span data-lang="en">Front-end</span></span>
+          <span><span data-lang="zh">訂房 API</span><span data-lang="en">Booking API</span></span>
+          <span><span data-lang="zh">環景實作</span><span data-lang="en">Panorama</span></span>
+          <span>GA4</span>
+        </dd></dl>
+        <div class="btn-row"><a class="btn en" href="https://example.com" target="_blank" rel="noopener" data-magnetic><span class="dot"></span>VIEW SITE</a></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<div class="counter en" aria-hidden="true"><b>01</b> / 12</div>
+
+<!-- ======================= CLIENTS ======================= -->
+<section id="clients" class="clients">
+  <div class="sec-head sec-head--flush">
+    <h2 class="en">CLIENTS</h2>
+    <p>
+      <span data-lang="zh">合作過的品牌與代理商，部分案子受保密協議限制不便公開。</span>
+      <span data-lang="en">Brands and agencies I have worked with. Some projects are under NDA and cannot be shown.</span>
+    </p>
+  </div>
+  <div class="logo-grid">
+    <!-- 換成圖檔：<a class="logo" href="#"><img src="img/logo-01.svg" alt="品牌名"></a> -->
+    <div class="logo">FOREST<br>ROASTERY</div>
+    <div class="logo">MUJI LIVING</div>
+    <div class="logo">TAIPEI<br>DESIGN WEEK</div>
+    <div class="logo">HONG SHENG</div>
+    <div class="logo">KOJI</div>
+    <div class="logo">LIN STUDIO</div>
+    <div class="logo">CARGO DESK</div>
+    <div class="logo">CULTURE<br>BUREAU</div>
+    <div class="logo">SOLAR BOTTLE</div>
+    <div class="logo">OPEN<br>CLASSROOM</div>
+    <div class="logo">ATELIER WU</div>
+    <div class="logo">SEASIDE</div>
+  </div>
+</section>
+
+<!-- ======================= CONTACT ======================= -->
+<section id="contact" class="contact">
+  <h2 class="en line"><span>LET'S BUILD<br>SOMETHING.</span></h2>
+  <div class="contact__grid">
+    <div><h3 class="en">EMAIL</h3><p><a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a></p></div>
+    <div><h3 class="en">PHONE</h3><p><a href="tel:+886900000000">+886 900 000 000</a></p></div>
+    <div><h3 class="en">LINKS</h3><p><a href="#" target="_blank" rel="noopener">GitHub</a>　<a href="#" target="_blank" rel="noopener">Behance</a>　<a href="#" target="_blank" rel="noopener">LinkedIn</a></p></div>
+    <div><h3 class="en">STATUS</h3><p>
+      <span data-lang="zh">2026 Q2 起可接新案，也接受全職職缺洽談。</span>
+      <span data-lang="en">Taking new projects from Q2 2026. Open to full-time roles as well.</span>
+    </p></div>
+  </div>
+</section>
+
+<footer>
+  <span class="en">© 2026 CHEN YU-HAO</span>
+  <span class="en">DESIGNED &amp; BUILT BY MYSELF</span>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

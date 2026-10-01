@@ -1,0 +1,9 @@
+- [使用者前端經驗與說明偏好](user-frontend-level.md) — 前端尚淺，解釋慣例時要分清「技術必須」與「純慣例」
+- [Coolify 官網專案](coolify-site.md) — Desktop 上有四個像的資料夾（coolify-theme 已停用不要碰），線上是 coolify-child；無 git，改前先備份
+- [開發環境現況](dev-environment.md) — VS Code 版 Claude Code；python3 是壞的、Playwright MCP 已連接可以真的開瀏覽器
+- [終端機設定要一步步帶](feedback-terminal-walkthrough.md) — 帶操作終端機時一次一步、等截圖確認再繼續
+- [Te-HoloOrb 產品頁](te-holoorb-site.md) — Desktop/Te-HoloOrb；細節看該資料夾的 CLAUDE.md，使用者用 file:// 開檔案
+- [切版不要自己上圖](feedback-no-image-placeholders.md) — 圖片留空給使用者自己放，只寫清楚改哪一行
+- [設計稿描述＝規格不是 bug](feedback-design-spec-vs-bug.md) — 有色碼/px 就是要我照做，判斷不出來先問一句
+- [COOLIFY STUDIO 新頁面](coolify-studio-page.md) — Desktop/COOLIFY STUDIO；骨架已建等設計稿，轉 PHP 有兩件事一定要做
+- [個人作品集 site 2](portfolio-site-2.md) — Desktop/site 2；三個已回報未修的 bug（減少動態效果全黑最嚴重），履歷表三欄下限實測是 1100px
